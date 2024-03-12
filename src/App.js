@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import { ProductsProvider } from "./ProductsContext";
+import ProductList from "./ProductList";
+import CopiedProductsList from "./CopiedProductsList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ProductsProvider>
+      <div>
+        <h1>Product List</h1>
+        <ProductList />
+        {/* <CopiedProductsList /> */}
+        <h1>copied Product list</h1>
+      </div>
+    </ProductsProvider>
   );
 }
 
